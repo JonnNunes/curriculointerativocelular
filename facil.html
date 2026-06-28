@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>João Nunes - Portfólio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+
+html, body{
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:'Press Start 2P', cursive;
+    text-align:center;
+    color:#C6AE77;
+
+    background-image:url("modosfacil.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    min-height:100vh;
+}
+
+/* TÍTULO */
+
+h1{
+
+    margin-top:30px;
+    font-size:18px;
+
+    color:#C6AE77;
+
+    text-shadow:
+        3px 3px 0 #0A0806,
+        0 0 6px rgba(255,180,80,.12);
+
+}
+
+/* GRID */
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* CARDS */
+
+.card{
+
+    background: rgba(18,14,11,.82);
+    border: 4px solid #4F4638;
+
+    width: 100%;
+    max-width: 260px;
+    height: 220px;
+    margin: 0 auto;
+    padding: 30px;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 35px rgba(0,0,0,.80);
+
+    transition: .2s;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+}
+
+/* HOVER DOS CARDS */
+
+.card:hover{
+
+    transform:scale(1.05);
+
+    background:rgba(22,17,13,.90);
+
+    border-color:#7A6848;
+
+}
+
+/* IMAGENS */
+
+.card img{
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    left: 50%;
+    top: 65%;
+
+    transform: translate(-50%, -50%);
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    opacity: .75;
+
+    filter: brightness(.75) contrast(1.15);
+
+    pointer-events: none;
+
+}
+/* TEXTO */
+
+.card div{
+
+    position: relative;
+
+    z-index: 1;
+
+    margin-top: 0;
+
+    color: #C6AE77;
+
+    text-shadow:
+        2px 2px 0 #090705;
+
+}
+/* MODAL */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+/* JANELA */
+
+.janela{
+    background:rgba(18,14,11,.82);
+    border:4px solid #4F4638;
+
+    width:90%;
+    max-width:750px;
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    padding:25px;
+
+    text-align:center;
+    color:#C6AE77;
+
+    box-shadow:0 0 35px rgba(0,0,0,.80);
+}
+
+/* SKILLS */
+
+.skills-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    justify-content:center;
+
+}
+
+.skill{
+
+    border:2px solid #4F4638;
+
+    background:rgba(35,28,22,.85);
+
+    color:#C6AE77;
+
+    padding:7px 12px;
+
+    font-size:10px;
+
+    text-shadow:
+        1px 1px 0 #090705;
+
+}
+
+/* BOTÕES */
+
+button{
+
+    font-family:'Press Start 2P', cursive;
+
+    background:rgba(22,17,13,.88);
+
+    color:#C6AE77;
+
+    border:4px solid #4F4638;
+
+    padding:10px 15px;
+
+    cursor:pointer;
+
+    margin-top:15px;
+
+    text-shadow:
+        2px 2px 0 #090705;
+
+    box-shadow:
+        5px 5px 0 rgba(0,0,0,.70);
+
+    transition:.2s;
+
+}
+
+/* HOVER DOS BOTÕES */
+
+button:hover{
+
+    background:rgba(34,27,20,.95);
+
+    border-color:#7A6848;
+
+    color:#E3C98E;
+
+    transform:scale(1.05);
+
+}
+
+/* VOLTAR */
+
+.voltar{
+    position:fixed;
+    bottom:15px;
+    right:15px;
+    z-index:1000;
+}
+
+.voltar button{
+
+    background:rgba(22,17,13,.88);
+
+    border:4px solid #4F4638;
+
+}
+
+/* ESCONDER */
+
+.escondido{
+
+    display:none !important;
+
+}
+@media (max-width: 768px){
+
+    h1{
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .card{
+        height: 200px;
+    }
+
+    .janela{
+        font-size: 10px;
+    }
+
+    button{
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
+@media (max-width:768px){
+    .voltar{
+        bottom:10px;
+        right:10px;
+    }
+}
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:999;
+
+    padding:10px;
+    box-sizing:border-box;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<h1 id="titulo">CURRÍCULO DE JOÃO NUNES</h1>
+
+<div class="container" id="menu">
+
+    <div class="card" onclick="abrirModal('contato')">
+        <img src="1034204.png">
+        <div>CONTATO</div>
+    </div>
+
+    <div class="card" onclick="abrirModal('formacao')">
+        <img src="formação.png">
+        <div>FORMAÇÃO</div>
+    </div>
+
+    <div class="card" onclick="abrirModal('experiencia')">
+        <img src="experiencia.png">
+        <div>EXPERIÊNCIA</div>
+    </div>
+
+    <div class="card" onclick="abrirModal('softskills')">
+        <img src="skills.png">
+        <div>SOFT SKILLS</div>
+    </div>
+
+    <div class="card" onclick="abrirModal('competencias')">
+        <img src="comptencias.png">
+        <div>COMPETÊNCIAS</div>
+    </div>
+
+    <div class="card" onclick="abrirModal('cursos')">
+        <img src="curso.png">
+        <div>CURSOS</div>
+    </div>
+
+</div>
+
+<div class="voltar" id="voltar">
+    <button onclick="window.location.href='index.html'">
+        VOLTAR
+    </button>
+</div>
+<!-- MODAL -->
+<div id="modal" class="modal">
+
+    <div class="janela">
+
+        <h2 id="tituloModal"></h2>
+        <div id="conteudoModal"></div>
+
+        <button onclick="fecharModal()">FECHAR</button>
+
+    </div>
+
+</div>
+
+<script>
+let contatoAtual = 0;
+
+const contatos = [
+
+`
+<div style="
+display:flex;
+align-items:center;
+gap:20px;
+justify-content:flex-start;
+text-align:left;
+">
+
+    <img src="fotodeperfil.jpg"
+     style="
+     width:90px;
+     height:110px;
+     object-fit:cover;
+     border:4px solid #8A6A2F;
+     box-shadow:3px 3px 0 rgba(0,0,0,.45);
+     ">
+
+    <div>
+        <strong style="font-size:12px;">
+            João Pedro Nunes de Souza
+        </strong>
+        <br><br>
+        Estudante de Marketing
+    </div>
+
+</div>
+`,
+
+`
+<div style="
+    display:flex;
+    align-items:center;
+    gap:15px;
+    justify-content:flex-start;
+    text-align:left;
+">
+    <img src="email.png"
+         style="width:50px;height:50px;">
+
+    <div>
+        <strong>E-mail</strong><br>
+        joaopedronunesde21@gmail.com
+    </div>
+</div>
+`,
+
+`
+<div style="display:flex;align-items:center;gap:15px;justify-content:center; justify-content:flex-start;
+text-align:left;">
+    <img src="whatsapp.png"
+         style="width:50px;height:50px;">
+    <div>
+        <strong>WhatsApp</strong><br>
+        (11) 96810-5438
+    </div>
+</div>
+`,
+
+`
+<div style="display:flex;align-items:center;gap:15px;justify-content:center;justify-content:flex-start;
+text-align:left;">
+    <img src="linkedin.png"
+         style="width:50px;height:50px;">
+    <div>
+        <strong>LinkedIn</strong><br>
+        <a href="https://linkedin.com/in/joão-pedro-nunes-de-souza-70595b333"
+           target="_blank"
+           style="color:white;">
+           Abrir LinkedIn
+        </a>
+    </div>
+</div>
+`
+
+];
+
+function trocarContato(direcao){
+
+    contatoAtual += direcao;
+
+    if(contatoAtual < 0){
+        contatoAtual = 0;
+    }
+
+    if(contatoAtual >= contatos.length){
+        contatoAtual = contatos.length - 1;
+    }
+
+    document.getElementById("infoContato").innerHTML =
+        contatos[contatoAtual];
+
+    const esquerda = document.getElementById("setaEsquerda");
+    const direita = document.getElementById("setaDireita");
+
+    esquerda.style.visibility =
+        contatoAtual === 0 ? "hidden" : "visible";
+
+    direita.style.visibility =
+        contatoAtual === contatos.length - 1 ? "hidden" : "visible";
+}
+
+let experienciaAtual = 0;
+
+const experiencias = [
+`
+ LAVANDERIA
+<div style="display:flex;align-items:center;gap:15px;">
+    <img src="logo-lavanderia.png.jpg"
+         style="width:80px;height:80px;object-fit:contain;">
+
+    <div>
+        <strong>Auxiliar Administrativo e Operacional</strong>
+    </div>
+</div>
+
+<div style="
+display:flex;
+gap:20px;
+align-items:flex-start;
+margin-top:20px;
+">
+
+<img src="lavanderia.jpg"
+style="
+width:250px;
+height:180px;
+object-fit:cover;
+border:4px solid #8A6A2F;
+box-shadow:3px 3px 0 rgba(0,0,0,.45);
+border-radius:2px;
+">
+
+<div style="
+text-align:left;
+line-height:1.8;
+font-size:11px;
+">
+Atuei em uma lavanderia familiar, desenvolvendo pensamento de dono e participando das rotinas administrativas, operacionais e de marketing.
+
+<br><br>
+
+Realizava atendimento ao cliente, organização do ambiente, controle de produtos e apoio à gestão do negócio.
+
+<br><br>
+
+
+Também auxiliava na divulgação da empresa através do Instagram, fortalecendo o relacionamento com os clientes e a presença da marca na região.
+</div>
+
+</div>
+`,
+
+`
+ VIAÇÃO CAMPO BELO
+<div style="display:flex;align-items:center;gap:15px;">
+    <img src="logo-campobelo.png"
+         style="width:80px;height:80px;object-fit:contain;">
+
+    <div>
+        <strong>Auxiliar de Fiscalização</strong>
+    </div>
+</div>
+
+<div style="
+display:flex;
+gap:20px;
+align-items:flex-start;
+margin-top:20px;
+">
+
+<img src="campobelo.jpg"
+style="
+width:250px;
+height:180px;
+object-fit:cover;
+border:4px solid #8A6A2F;
+box-shadow:3px 3px 0 rgba(0,0,0,.45);
+border-radius:2px;
+">
+
+<div style="
+text-align:left;
+line-height:1.8;
+font-size:11px;
+">
+Atuei como Auxiliar de Fiscalização na Viação Campo Belo, acompanhando a operação dos ônibus e verificando o cumprimento dos padrões exigidos.
+
+<br><br>
+
+Realizava conferência de equipamentos obrigatórios, condições de limpeza, horários das linhas e organização do fluxo de passageiros.
+
+<br><br>
+
+Essa experiência fortaleceu minha atenção aos detalhes, responsabilidade e comprometimento profissional.
+</div>
+
+</div>
+`,
+
+`
+ NATURA
+<div style="display:flex;align-items:center;gap:15px;">
+    <img src="logo-natura.png"
+         style="width:80px;height:80px;object-fit:contain;">
+
+    <div>
+        <strong>Auxiliar de Logística</strong>
+    </div>
+</div>
+
+<div style="
+display:flex;
+gap:20px;
+align-items:flex-start;
+margin-top:20px;
+">
+
+<img src="cedis-natura.jpg"
+style="
+width:250px;
+height:180px;
+object-fit:cover;
+border:4px solid #8A6A2F;
+box-shadow:3px 3px 0 rgba(0,0,0,.45);
+border-radius:2px;
+">
+
+<div style="
+text-align:left;
+line-height:1.8;
+font-size:11px;
+">
+Atualmente atuo como Auxiliar de Logística na operação da Natura através da Adecco.
+
+<br><br>
+
+Sou responsável pelo recebimento de mercadorias, conferência de volumes, organização de pallets e triagem de produtos dentro do centro de distribuição.
+
+Atuo diretamente na organização do fluxo operacional, garantindo que os materiais sejam identificados, separados e direcionados corretamente para as próximas etapas do processo logístico.
+
+<br><br>
+
+Essa experiência vem ampliando meus conhecimentos em logística, organização operacional, produtividade e trabalho em equipe.
+
+</div>
+
+</div>
+`
+];
+function trocarExperiencia(direcao){
+
+    experienciaAtual += direcao;
+
+    if(experienciaAtual < 0){
+        experienciaAtual = 0;
+    }
+
+    if(experienciaAtual >= experiencias.length){
+        experienciaAtual = experiencias.length - 1;
+    }
+
+    document.getElementById("infoExperiencia").innerHTML =
+        experiencias[experienciaAtual];
+
+    const esquerda =
+        document.getElementById("setaEsquerdaExp");
+
+    const direita =
+        document.getElementById("setaDireitaExp");
+
+    esquerda.style.visibility =
+        experienciaAtual === 0 ? "hidden" : "visible";
+
+    direita.style.visibility =
+        experienciaAtual === experiencias.length - 1
+        ? "hidden"
+        : "visible";
+}
+function abrirModal(tipo){
+
+    // 🔥 SUME TUDO DO MENU
+    document.getElementById("menu").classList.add("escondido");
+    document.getElementById("titulo").classList.add("escondido");
+    document.getElementById("voltar").classList.add("escondido");
+
+    const titulo = document.getElementById("tituloModal");
+    const conteudo = document.getElementById("conteudoModal");
+
+    if(tipo === "contato"){
+
+    titulo.innerText = "CONTATO";
+
+    contatoAtual = 0;
+
+    conteudo.innerHTML = `
+        <div style="
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:20px;
+        ">
+
+            <button
+                id="setaEsquerda"
+                onclick="trocarContato(-1)"
+                style="visibility:hidden;">
+                ◀
+            </button>
+
+            <div id="infoContato" style="width:100%; max-width:450px;">
+                ${contatos[0]}
+            </div>
+
+            <button
+                id="setaDireita"
+                onclick="trocarContato(1)">
+                ▶
+            </button>
+
+        </div>
+    `;
+}
+
+   else if(tipo === "formacao"){
+
+    titulo.innerText = "FORMAÇÃO";
+
+    let formacaoAtual = 0;
+
+    const formacoes = [
+
+`
+<div>
+
+    <div style="
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+    ">
+
+        <img src="logo-senac.png"
+        style="
+        width:70px;
+        height:70px;
+        object-fit:contain;
+        ">
+
+        <h3 style="margin:0;">
+        ENSINO MÉDIO TÉCNICO EM IoT
+        </h3>
+
+    </div>
+
+    <div style="
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    ">
+
+        <img src="campus-senac.jpg"
+        style="
+        width:220px;
+        height:220px;
+        object-fit:cover;
+        border:4px solid #8A6A2F;
+box-shadow:3px 3px 0 rgba(0,0,0,.45);
+border-radius:2px;
+        ">
+
+        <p style="
+        font-size:10px;
+        line-height:1.8;
+        text-align:left;
+        margin:0;
+        ">
+        Concluí o Ensino Médio Técnico em Internet das Coisas (IoT)
+        no Senac São Paulo, instituição reconhecida pela excelência
+        na formação profissional.
+
+        <br><br>
+
+        Durante o curso desenvolvi conhecimentos em manutenção
+        e montagem de computadores, instalação de hardware,
+        software, redes LAN/WAN, cabeamento estruturado,
+        Arduino, automação, programação, banco de dados,
+        Excel, Word e Microsoft Teams.
+
+        <br><br>
+
+        Ao longo dos três anos participei de atividades práticas
+        voltadas para tecnologia e inovação, obtendo certificações
+        intermediárias e experiência em projetos que integraram
+        teoria e prática.
+        </p>
+
+    </div>
+
+</div>
+`,
+
+`
+<div>
+
+    <div style="
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+    ">
+
+        <img src="logo-italo.png"
+        style="
+        width:70px;
+        height:70px;
+        object-fit:contain;
+        ">
+
+        <h3 style="margin:0;">
+        ENSINO SUPERIOR EM MARKETING
+        </h3>
+
+    </div>
+
+    <div style="
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    ">
+
+        <img src="campus-italo.jpg"
+        style="
+        width:220px;
+        height:220px;
+        object-fit:cover;
+        border:4px solid #8A6A2F;
+box-shadow:3px 3px 0 rgba(0,0,0,.45);
+border-radius:2px;
+        ">
+
+        <p style="
+        font-size:10px;
+        line-height:1.8;
+        text-align:left;
+        margin:0;
+        ">
+        Atualmente curso Marketing no Centro Universitário
+        Católico Ítalo Brasileiro.
+
+        <br><br>
+
+        Durante a graduação estou aprofundando conhecimentos
+        em comportamento do consumidor, criação de personas,
+        público-alvo, estratégias de comunicação, branding,
+        marketing digital, pesquisa de mercado e os 4 Ps do
+        Marketing.
+
+        <br><br>
+
+        A formação também desenvolve visão estratégica,
+        criatividade, pensamento analítico e capacidade de criar
+        soluções inovadoras para empresas e negócios.
+        </p>
+
+    </div>
+
+</div>
+`
+
+];
+
+    conteudo.innerHTML = `
+    <div style="
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:20px;
+    ">
+
+        <button id="setaFormacaoEsquerda"
+        style="visibility:hidden;">
+        ◀
+        </button>
+
+        <div id="infoFormacao" style="width:100%; max-width:600px;">
+            ${formacoes[0]}
+        </div>
+
+        <button id="setaFormacaoDireita">
+        ▶
+        </button>
+
+    </div>
+    `;
+
+    const esquerda =
+    document.getElementById("setaFormacaoEsquerda");
+
+    const direita =
+    document.getElementById("setaFormacaoDireita");
+
+    esquerda.onclick = function(){
+
+        formacaoAtual--;
+
+        if(formacaoAtual < 0){
+            formacaoAtual = 0;
+        }
+
+        document.getElementById("infoFormacao").innerHTML =
+        formacoes[formacaoAtual];
+
+        esquerda.style.visibility =
+        formacaoAtual === 0 ? "hidden" : "visible";
+
+        direita.style.visibility =
+        formacaoAtual === formacoes.length - 1 ? "hidden" : "visible";
+    };
+
+    direita.onclick = function(){
+
+        formacaoAtual++;
+
+        if(formacaoAtual >= formacoes.length){
+            formacaoAtual = formacoes.length - 1;
+        }
+
+        document.getElementById("infoFormacao").innerHTML =
+        formacoes[formacaoAtual];
+
+        esquerda.style.visibility =
+        formacaoAtual === 0 ? "hidden" : "visible";
+
+        direita.style.visibility =
+        formacaoAtual === formacoes.length - 1 ? "hidden" : "visible";
+    };
+}
+
+else if(tipo === "experiencia"){
+
+    titulo.innerText = "EXPERIÊNCIA";
+
+    conteudo.innerHTML = `
+
+    <div style="
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:20px;
+    ">
+
+        <button
+            id="setaEsquerdaExp"
+            onclick="trocarExperiencia(-1)"
+            style="visibility:hidden;">
+            ◀
+        </button>
+
+        <div id="infoExperiencia" style="width:100%; max-width:650px;">
+
+            <div style="display:flex;align-items:center;gap:15px;">
+                <img src="logo-lavanderia.png.jpg"
+                     style="width:80px;height:80px;object-fit:contain;">
+
+                <div>
+                    <strong>Auxiliar Administrativo e Operacional</strong>
+                </div>
+            </div>
+
+            <div style="
+                display:flex;
+                gap:20px;
+                align-items:flex-start;
+                margin-top:20px;
+            ">
+
+                <img src="lavanderia.jpg"
+                     style="
+                     width:250px;
+                     height:180px;
+                     object-fit:cover;
+                     border:4px solid #8A6A2F;
+box-shadow:3px 3px 0 rgba(0,0,0,.45);
+border-radius:2px;
+                ">
+
+                <div style="
+                    text-align:left;
+                    line-height:1.8;
+                    font-size:11px;
+                ">
+                    Atuei em uma lavanderia familiar, desenvolvendo desde cedo uma visão estratégica de negócio e o pensamento de dono, participando diretamente das rotinas administrativas, operacionais e de marketing da empresa.<br><br>
+
+                    Entre minhas responsabilidades estavam o atendimento ao cliente, organização do ambiente, controle de estoque de produtos, acompanhamento das operações diárias e apoio à gestão administrativa.<br><br>
+
+                    Também fui responsável pela comunicação com clientes e pelo fortalecimento da presença digital da lavanderia através do Instagram, auxiliando na divulgação dos serviços, relacionamento com o público e captação de novos clientes.
+                </div>
+
+            </div>
+
+        </div>
+
+        <button
+            id="setaDireitaExp"
+            onclick="trocarExperiencia(1)">
+            ▶
+        </button>
+
+    </div>
+    `;
+}
+else if(tipo === "softskills"){
+    titulo.innerText = "SOFT SKILLS";
+    conteudo.innerHTML = `
+        <div class="skills-container">
+
+            <span class="skill">Comunicação</span>
+            <span class="skill">Atendimento ao Cliente</span>
+            <span class="skill">Organização</span>
+            <span class="skill">Responsabilidade</span>
+            <span class="skill">Trabalho em Equipe</span>
+            <span class="skill">Proatividade</span>
+            <span class="skill">Criatividade</span>
+            <span class="skill">Adaptabilidade</span>
+            <span class="skill">Disciplina</span>
+            <span class="skill">Foco</span>
+            <span class="skill">Relacionamento Interpessoal</span>
+            <span class="skill">Liderança</span>
+
+            <span class="skill">Pensamento Estratégico</span>
+            <span class="skill">Resolução de Problemas</span>
+            <span class="skill">Aprendizado Rápido</span>
+            <span class="skill">Empatia</span>
+            <span class="skill">Escuta Ativa</span>
+            <span class="skill">Gestão do Tempo</span>
+            <span class="skill">Tomada de Decisão</span>
+            <span class="skill">Comprometimento</span>
+            <span class="skill">Flexibilidade</span>
+            <span class="skill">Visão de Negócio</span>
+            <span class="skill">Pensamento Analítico</span>
+            <span class="skill">Atenção aos Detalhes</span>
+            <span class="skill">Capacidade de Planejamento</span>
+            <span class="skill">Inteligência Emocional</span>
+            <span class="skill">Persuasão</span>
+            <span class="skill">Negociação</span>
+            <span class="skill">Autonomia</span>
+            <span class="skill">Iniciativa</span>
+            <span class="skill">Capacidade de Observação</span>
+            <span class="skill">Orientação para Resultados</span>
+            <span class="skill">Perfil Empreendedor</span>
+            <span class="skill">Gestão de Prioridades</span>
+
+        </div>
+    `;
+}
+else if(tipo === "competencias"){
+
+    titulo.innerText = "COMPETÊNCIAS";
+
+    let competenciaAtual = 0;
+
+    const competencias = [
+
+`
+<div>
+
+<div style="
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+">
+<img src="logo-senac.png"
+style="width:80px;height:80px;object-fit:contain;">
+
+<h3>SENAC - TÉCNICO EM IoT</h3>
+</div>
+
+<div class="skills-container">
+    <span class="skill">HTML</span>
+    <span class="skill">CSS</span>
+    <span class="skill">JavaScript</span>
+    <span class="skill">Arduino</span>
+    <span class="skill">Arduino IDE</span>
+    <span class="skill">Git</span>
+    <span class="skill">GitHub</span>
+    <span class="skill">Linux</span>
+    <span class="skill">Redes LAN/WAN</span>
+    <span class="skill">Montagem de Computadores</span>
+    <span class="skill">Manutenção de Computadores</span>
+    <span class="skill">Excel</span>
+    <span class="skill">Word</span>
+    <span class="skill">PowerPoint</span>
+    <span class="skill">Teams</span>
+    <span class="skill">Canva</span>
+</div>
+
+</div>
+`,
+
+`
+<div>
+
+<div style="
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+">
+<img src="logo-italo.png"
+style="width:80px;height:80px;object-fit:contain;">
+
+<h3>ÍTALO - MARKETING</h3>
+</div>
+
+<div class="skills-container">
+    <span class="skill">Marketing</span>
+    <span class="skill">Marketing Digital</span>
+    <span class="skill">Gestão de Marketing</span>
+    <span class="skill">Pesquisa de Mercado</span>
+    <span class="skill">Comportamento do Consumidor</span>
+    <span class="skill">Gestão de Produtos</span>
+    <span class="skill">Branding</span>
+    <span class="skill">Criação de Personas</span>
+    <span class="skill">Público-Alvo</span>
+    <span class="skill">Estratégias de Comunicação</span>
+    <span class="skill">Planejamento</span>
+    <span class="skill">Análise de Mercado</span>
+</div>
+
+</div>
+`,
+
+`
+<div>
+
+<div style="
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+">
+<img src="logo-lavanderia.png.jpg"
+style="width:80px;height:80px;object-fit:contain;">
+
+<h3>1LAVANDERIA - ADMINISTRAÇÃO</h3>
+</div>
+
+<div class="skills-container">
+    <span class="skill">Atendimento ao Cliente</span>
+    <span class="skill">CRM</span>
+    <span class="skill">Marketing de Mídias Sociais</span>
+    <span class="skill">Vendas</span>
+    <span class="skill">Comunicação</span>
+    <span class="skill">Oratória</span>
+    <span class="skill">Empreendedorismo</span>
+    <span class="skill">Administração</span>
+    <span class="skill">Organização</span>
+    <span class="skill">Resolução de Problemas</span>
+    <span class="skill">Captação de Clientes</span>
+    <span class="skill">Gestão Operacional</span>
+</div>
+
+</div>
+`,
+
+`
+<div>
+
+<div style="
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+">
+<img src="logo-campobelo.png"
+style="width:80px;height:80px;object-fit:contain;">
+
+<h3>CAMPO BELO - FISCALIZAÇÃO</h3>
+</div>
+
+<div class="skills-container">
+    <span class="skill">Fiscalização Operacional</span>
+    <span class="skill">Atenção aos Detalhes</span>
+    <span class="skill">Controle de Processos</span>
+    <span class="skill">Cumprimento de Normas</span>
+    <span class="skill">Responsabilidade</span>
+    <span class="skill">Organização</span>
+    <span class="skill">Monitoramento</span>
+    <span class="skill">Análise Operacional</span>
+    <span class="skill">Trabalho em Equipe</span>
+</div>
+
+</div>
+`,
+
+`
+<div>
+
+<div style="
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+">
+<img src="logo-natura.png"
+style="width:80px;height:80px;object-fit:contain;">
+
+<h3>NATURA/ADECCO - LOGÍSTICA</h3>
+</div>
+
+<div class="skills-container">
+    <span class="skill">Recebimento de Mercadorias</span>
+    <span class="skill">Triagem de Produtos</span>
+    <span class="skill">Conferência de Volumes</span>
+    <span class="skill">Organização de Pallets</span>
+    <span class="skill">Controle de Fluxo</span>
+    <span class="skill">Logística Operacional</span>
+    <span class="skill">Produtividade</span>
+    <span class="skill">Trabalho em Equipe</span>
+    <span class="skill">Organização</span>
+    <span class="skill">Agilidade</span>
+</div>
+
+</div>
+`
+];
+
+conteudo.innerHTML = `
+<div style="
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+">
+
+<button id="setaCompEsq"
+style="visibility:hidden;">
+◀
+</button>
+
+<div id="infoCompetencia" style="width:100%; max-width:600px;">
+${competencias[0]}
+</div>
+
+<button id="setaCompDir">
+▶
+</button>
+
+</div>
+`;
+
+const esquerda = document.getElementById("setaCompEsq");
+const direita = document.getElementById("setaCompDir");
+
+esquerda.onclick = function(){
+
+    competenciaAtual--;
+
+    if(competenciaAtual < 0){
+        competenciaAtual = 0;
+    }
+
+    document.getElementById("infoCompetencia").innerHTML =
+    competencias[competenciaAtual];
+
+    esquerda.style.visibility =
+    competenciaAtual === 0 ? "hidden" : "visible";
+
+    direita.style.visibility =
+    competenciaAtual === competencias.length - 1
+    ? "hidden"
+    : "visible";
+};
+
+direita.onclick = function(){
+
+    competenciaAtual++;
+
+    if(competenciaAtual >= competencias.length){
+        competenciaAtual = competencias.length - 1;
+    }
+
+    document.getElementById("infoCompetencia").innerHTML =
+    competencias[competenciaAtual];
+
+    esquerda.style.visibility =
+    competenciaAtual === 0 ? "hidden" : "visible";
+
+    direita.style.visibility =
+    competenciaAtual === competencias.length - 1
+    ? "hidden"
+    : "visible";
+};
+
+}
+
+else if(tipo === "cursos"){
+
+    titulo.innerText = "CURSOS";
+
+    conteudo.innerHTML = `
+
+    <div>
+
+        <div style="
+        display:flex;
+        align-items:center;
+        gap:15px;
+        margin-bottom:20px;
+        ">
+
+            <img src="logo-senac.png"
+            style="
+            width:80px;
+            height:80px;
+            object-fit:contain;
+            ">
+
+            <h3>INGLÊS INTERMEDIÁRIO</h3>
+
+        </div>
+
+        <div style="
+        display:flex;
+        gap:20px;
+        align-items:flex-start;
+        ">
+
+            <img src="campus-ingles.jpg"
+            style="
+            width:220px;
+            height:220px;
+            object-fit:cover;
+            border:4px solid #8A6A2F;
+box-shadow:3px 3px 0 rgba(0,0,0,.45);
+border-radius:2px;
+            ">
+
+            <div style="
+            text-align:left;
+            line-height:1.8;
+            font-size:11px;
+            ">
+
+            Realizei o curso de Inglês no Senac, concluindo o nível intermediário e desenvolvendo competências voltadas para comunicação, compreensão e interpretação da língua inglesa.
+
+            <br><br>
+
+            Durante a formação, aprimorei habilidades de conversação, leitura, escrita e compreensão auditiva, além de ampliar meu vocabulário para situações acadêmicas, profissionais e do dia a dia.
+
+            <br><br>
+
+            O curso também contribuiu para o desenvolvimento da comunicação intercultural, interpretação de textos, produção de conteúdos em inglês e maior confiança para utilizar o idioma em diferentes contextos.
+
+            </div>
+
+        </div>
+
+    </div>
+
+    `;
+}
+
+document.getElementById("modal").style.display = "flex";
+
+} // <-- fecha abrirModal
+
+function fecharModal(){
+
+    document.getElementById("modal").style.display = "none";
+
+    document.getElementById("menu").classList.remove("escondido");
+    document.getElementById("titulo").classList.remove("escondido");
+    document.getElementById("voltar").classList.remove("escondido");
+}
+
+
+function fecharModal(){
+
+    document.getElementById("modal").style.display = "none";
+
+    // 🔥 VOLTA TUDO
+    document.getElementById("menu").classList.remove("escondido");
+    document.getElementById("titulo").classList.remove("escondido");
+    document.getElementById("voltar").classList.remove("escondido");
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>João Nunes - Portfólio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+
+/* FUNDO */
+
+html,
+body{
+
+    margin:0;
+    padding:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:'Press Start 2P', cursive;
+
+    background:url("fundoreal.jpg.png") center center/cover no-repeat;
+
+}
+
+/* CENTRALIZA */
+
+body{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* CONTAINER */
+
+.container{
+
+    width:90%;
+
+    text-align:center;
+
+}
+
+/* TÍTULO */
+
+.title-box{
+
+    background:rgba(18,14,11,.82);
+
+    border:4px solid #4F4638;
+
+    padding:20px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 0 30px rgba(0,0,0,.75);
+
+}
+
+/* LINHAS */
+
+.line1,
+.line2{
+
+    color:#C6AE77;
+
+    font-size:28px;
+
+    line-height:1.6;
+
+    letter-spacing:2px;
+
+    text-shadow:
+        3px 3px 0 #0A0806,
+        0 0 6px rgba(255,180,80,.12);
+
+}
+
+/* START */
+
+#start{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+    color:#C6AE77;
+
+    animation:piscar 1s infinite;
+
+    cursor:pointer;
+
+}
+
+/* ESCOLHA */
+
+#escolha{
+
+    display:none;
+
+    font-size:16px;
+
+    color:#C6AE77;
+
+    margin-bottom:25px;
+
+}
+
+/* MENU */
+
+#menu{
+
+    display:none;
+
+}
+
+/* BOTÕES */
+
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    margin:12px 0;
+
+    font-size:12px;
+
+    font-family:'Press Start 2P', cursive;
+
+    background:rgba(22,17,13,.88);
+
+    border:4px solid #4F4638;
+
+    color:#C6AE77;
+
+    box-shadow:5px 5px 0 rgba(0,0,0,.70);
+
+    cursor:pointer;
+
+}
+
+/* ANIMAÇÃO */
+
+@keyframes piscar{
+
+    0%,100%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.35;
+
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title-box" id="titulo">
+
+        <div class="line1">CURRÍCULO</div>
+
+        <div class="line2">JOÃO NUNES</div>
+
+    </div>
+
+    <div id="start">
+        PRESS START
+    </div>
+
+    <div id="escolha">
+        ESCOLHA UMA OPÇÃO
+    </div>
+
+    <div id="menu">
+
+<button onclick="window.location.href='facil.html'">
+    VISÃO RÁPIDA
+</button>
+
+<button onclick="window.location.href='dificilmanutenção.html'">
+    MODO COMPLETO
+</button>
+
+    </div>
+
+</div>
+
+<script>
+
+const start = document.getElementById("start");
+const menu = document.getElementById("menu");
+const escolha = document.getElementById("escolha");
+const titulo = document.getElementById("titulo");
+
+start.addEventListener("click", () => {
+
+    start.style.display = "none";
+    titulo.style.display = "none";
+
+    escolha.style.display = "block";
+    menu.style.display = "block";
+
+});
+
+
+</script>
+</body>
+</html>

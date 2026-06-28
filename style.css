@@ -1,0 +1,86 @@
+
+.janela{
+    background:#1d1d1d;
+    border:4px solid white;
+    width:750px;
+    max-width:90%;
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:flex-start;  /* 👈 força conteúdo pro lado esquerdo */
+    text-align:left;         /* 👈 texto alinhado à esquerda */
+}
+
+/* título continua bonito */
+.janela h2{
+    width:100%;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* textos normais */
+.janela p{
+    text-align:left;
+    width:100%;
+}
+
+/* skills alinhadas esquerda */
+.skills-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+    justify-content:flex-start; /* 👈 IMPORTANTE */
+    width:100%;
+}
+
+.skill{
+    border:2px solid white;
+    padding:7px 12px;
+    font-size:10px;
+}
+.fase-box{
+    margin-top:12px;
+}
+
+.detalhe-fase{
+
+    display:none;
+
+    margin-top:10px;
+
+    background:#111;
+
+    border:3px solid white;
+
+    padding:20px;
+
+    text-align:center;
+
+    box-shadow:4px 4px 0px black;
+
+    animation:abrir .2s ease;
+}
+
+.detalhe-fase h3{
+
+    margin-bottom:20px;
+
+    font-size:12px;
+}
+
+@keyframes abrir{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
